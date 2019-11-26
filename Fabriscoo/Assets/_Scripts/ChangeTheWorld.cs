@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class ChangeTheWorld : MonoBehaviour
 {
     public bool isChanged;
-    public Event ChangeSomething;
+    public UnityEvent ChangeSomething;
+    public UnityEvent RevertChanges;
 }
