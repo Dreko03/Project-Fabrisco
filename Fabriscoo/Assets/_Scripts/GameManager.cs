@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class GameManager : MonoBehaviour
     public Transform CamPos;
     public Collider[] viewedObjects;
     public float capsuleLength, capsuleRadius;
-    public UnityEvent Reverse;
     public ChangeTheWorld[] GPEs;
+    public float fps;
+    public Text fpstxt;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FPScount();
+
         if (discoActive)
         {
             //viewedObjects = Physics.OverlapCapsule(CamPos.position, CamPos.position + new Vector3(0, 0, capsuleLength), capsuleRadius);
@@ -58,6 +62,21 @@ public class GameManager : MonoBehaviour
         {
             Gizmos.DrawSphere(CamPos.position, capsuleRadius);
             Gizmos.DrawSphere(CamPos.position + (CamPos.forward * capsuleLength), capsuleRadius);
+        }
+    }
+
+    public void FPScount()
+    {
+        fps = 1 / Time.deltaTime;
+        fps = Mathf.Round(fps);
+        fpstxt.text = "" + fps;
+        if (fps >= 80)
+        {
+            fpstxt.color = Color.green;
+        }
+        else
+        {
+            fpstxt.color = Color.yellow;
         }
     }
 }
