@@ -259,7 +259,7 @@ namespace Valve.VR
 
                             // Check the cache first.
                             var material = materials[renderModel.diffuseTextureId] as Material;
-                            if (material == null || material.mainTexture == null)
+                            if (material == null || material.GetTexture("MainTex") == null)
                             {
                                 var pDiffuseTexture = System.IntPtr.Zero;
 
@@ -401,7 +401,7 @@ namespace Valve.VR
 
             // Check cache before loading texture.
             var material = materials[renderModel.diffuseTextureId] as Material;
-            if (material == null || material.mainTexture == null)
+            if (material == null || material.GetTexture("MainTex") == null)
             {
                 var pDiffuseTexture = System.IntPtr.Zero;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Leak : MonoBehaviour
 {
     public ParticleSystem ps_leak;
+    public GameObject ps_glass;
     public Rigidbody rb;
 
     private void Awake()
@@ -43,6 +44,7 @@ public class Leak : MonoBehaviour
         if(rb.velocity.y > 1f || rb.velocity.y < -1f)
         {
             Debug.Log("Velocity at Col : " + rb.velocity.y);
+            Instantiate(ps_glass, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

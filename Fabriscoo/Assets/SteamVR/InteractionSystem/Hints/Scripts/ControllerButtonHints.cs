@@ -429,7 +429,7 @@ namespace Valve.VR.InteractionSystem
 			renderModel.GetComponentsInChildren<MeshRenderer>( renderers );
 			for ( int i = 0; i < renderers.Count; i++ )
 			{
-				Texture mainTexture = renderers[i].material.mainTexture;
+				Texture mainTexture = renderers[i].material.GetTexture("MainTex");
 				renderers[i].sharedMaterial = controllerMaterial;
 				renderers[i].material.mainTexture = mainTexture;
 
