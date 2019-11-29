@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public bool discoActive;
+    public AudioSource[] AudioSources;
     public Transform CamPos;
     public Collider[] viewedObjects;
     public float capsuleLength, capsuleRadius;
@@ -23,12 +24,22 @@ public class GameManager : MonoBehaviour
     public void Activate()
     {
         discoActive = true;
+        foreach(AudioSource As in AudioSources)
+        {
+            As.Play();
+        }
     }
 
     public void Desactivate()
     {
         discoActive = false;
-        foreach(ChangeTheWorld reverseEvent in GPEs)
+        foreach (AudioSource As in AudioSources)
+        {
+            As.Stop();
+            As.pitch = 1f;
+        }
+
+        foreach (ChangeTheWorld reverseEvent in GPEs)
         {
             reverseEvent.isChanged = false;
             reverseEvent.RevertChanges.Invoke();
