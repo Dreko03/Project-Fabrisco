@@ -7,28 +7,41 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public bool discoActive;
+    public AudioSource[] AudioSources;
     public Transform CamPos;
     public Collider[] viewedObjects;
     public float capsuleLength, capsuleRadius;
     public ChangeTheWorld[] GPEs;
-    public float fps;
-    public Text fpstxt;
+    public float fps, timeScale;
+    public Text fpstxt, timetxt;
 
     // Start is called before the first frame update
     void Awake()
     {
         GPEs = FindObjectsOfType<ChangeTheWorld>();
+        Time.captureFramerate = 90;
+
     }
 
     public void Activate()
     {
         discoActive = true;
+        foreach(AudioSource As in AudioSources)
+        {
+            As.Play();
+        }
     }
 
     public void Desactivate()
     {
         discoActive = false;
-        foreach(ChangeTheWorld reverseEvent in GPEs)
+        foreach (AudioSource As in AudioSources)
+        {
+            As.Stop();
+            As.pitch = 1f;
+        }
+
+        foreach (ChangeTheWorld reverseEvent in GPEs)
         {
             reverseEvent.isChanged = false;
             reverseEvent.RevertChanges.Invoke();
@@ -39,6 +52,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         FPScount();
+        timeScale = Time.timeScale;
 
         if (discoActive)
         {
@@ -69,6 +83,7 @@ public class GameManager : MonoBehaviour
     {
         fps = 1 / Time.deltaTime;
         fps = Mathf.Round(fps);
+        timetxt.text = "" + timeScale;
         fpstxt.text = "" + fps;
         if (fps >= 80)
         {

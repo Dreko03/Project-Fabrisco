@@ -77,8 +77,7 @@ namespace Valve.VR.InteractionSystem
         protected SteamVR_Input_Sources inputSource;
 
         //-------------------------------------------------
-        void Awake()
-		{
+        void Awake() {
 			renderModelLoadedAction = SteamVR_Events.RenderModelLoadedAction( OnRenderModelLoaded );
 			colorID = Shader.PropertyToID( "_Color" );
 		}
@@ -429,7 +428,7 @@ namespace Valve.VR.InteractionSystem
 			renderModel.GetComponentsInChildren<MeshRenderer>( renderers );
 			for ( int i = 0; i < renderers.Count; i++ )
 			{
-				Texture mainTexture = renderers[i].material.GetTexture("MainTex");
+				Texture mainTexture = renderers[i].material.GetTexture("_MainTex");
 				renderers[i].sharedMaterial = controllerMaterial;
 				renderers[i].material.mainTexture = mainTexture;
 
