@@ -17,12 +17,12 @@ public class PisteDisco : MonoBehaviour
         }
         sequences[currentSequence].TurnOn();
     }
-
     
     void Update()
     {
         
     }
+
     [System.Serializable]
     public class Sequence
     {
