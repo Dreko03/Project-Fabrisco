@@ -9,24 +9,39 @@ public class PisteDisco : MonoBehaviour
     public int currentSequence = 0;   
 
     void Start()
+    {       
+        StartCoroutine(SwitchSequences(3f));
+    }
+
+    public void BoucleTurnOff()
     {
         foreach (Sequence sequence in sequences)
         {
             sequence.TurnOffSequences();
         }
-        StartCoroutine(SwitchSequences(1.5f));
     }
-
+    
     IEnumerator SwitchSequences(float delay)
     {
-        yield return new WaitForSeconds(delay);       
+        yield return new WaitForSeconds(delay);
+        BoucleTurnOff();
+        currentSequence = 0;
         sequences[currentSequence].TurnOn();
         yield return new WaitForSeconds(delay);
+        BoucleTurnOff();
         currentSequence = 1;
         sequences[currentSequence].TurnOn();
         yield return new WaitForSeconds(delay);
+        BoucleTurnOff();
         currentSequence = 2;
         sequences[currentSequence].TurnOn();
+        yield return new WaitForSeconds(delay);
+        BoucleTurnOff();
+        currentSequence = 3;
+        sequences[currentSequence].TurnOn();
+        yield return new WaitForSeconds(delay);
+        BoucleTurnOff();
+        StartCoroutine(SwitchSequences(3f));
     }
 
     void Update()
@@ -47,17 +62,17 @@ public class PisteDisco : MonoBehaviour
                 cells[i].material = materials[0];              
             }
         }
-
+        
         public void TurnOn()
         {
             foreach (MeshRenderer light in cells)
             {
                 for (int x = 0; x < materials.Length; x++)
-                {                   
+                {                                       
                     light.material = materials[x];
                 }               
             }
-        }       
+        }    
     }
 }
 
