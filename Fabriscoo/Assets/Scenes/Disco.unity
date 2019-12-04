@@ -476,7 +476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179390988
 GameObject:
@@ -656,7 +656,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: NaN, z: 3.35e-43, w: 2.478153e+33}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 1e-45, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 1
@@ -1125,90 +1125,6 @@ Transform:
   m_Father: {fileID: 824661991}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &598917474
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_Name
-      value: Boule_disco
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.62914
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.111457825
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.656027
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 495f17cae3b3d3a4e80f276b8f5f71d1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 495f17cae3b3d3a4e80f276b8f5f71d1, type: 3}
 --- !u!1 &622349038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1685,7 @@ Transform:
   - {fileID: 71302226}
   - {fileID: 817969507}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &824661992
 MonoBehaviour:
@@ -2033,7 +1949,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.1894817, y: 3.6661646e+18, z: -2.535282e-23, w: 0.000000038466258}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 4.415e-42, w: 1.02e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 1
@@ -2215,7 +2131,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -1.1267448e-25, z: 3.35e-43, w: -1.0680989e-25}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 1
@@ -2439,7 +2355,7 @@ Transform:
   - {fileID: 1483173772}
   - {fileID: 328335400}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1118231116
 GameObject:
@@ -3176,7 +3092,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -1.0756858e-25, z: 3.35e-43, w: -9.7587074e-26}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 1
@@ -3633,7 +3549,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1848019759
 GameObject:
