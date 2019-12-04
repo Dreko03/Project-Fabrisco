@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+Valve.VR
 
 public class Leak : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class Leak : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, 9))
             {
                 if (!ps_leak.isPlaying)
+                {
                     ps_leak.Play();
+                }
             }
             else
             {

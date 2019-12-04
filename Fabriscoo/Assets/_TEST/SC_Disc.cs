@@ -63,7 +63,14 @@ public class SC_Disc : MonoBehaviour
     {
         foreach (AudioSource As in AudioSources)
         {
-            As.pitch -= multiplier * globalMultiplier;
+            if(As.pitch <= -1)
+            {
+                As.pitch = -1;
+            }
+            else
+            {
+                As.pitch -= multiplier * globalMultiplier;
+            }
         }
         foreach (Animator an in ans)
         {
