@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public ChangeTheWorld[] GPEs;
     public float fps, timeScale;
     public Text fpstxt, timetxt;
+    public PlayableDirector tml_transition;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,11 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
-        discoActive = true;
-        foreach(AudioSource As in AudioSources)
-        {
-            As.Play();
-        }
+        tml_transition.Play();
     }
 
     public void Desactivate()
@@ -94,4 +92,18 @@ public class GameManager : MonoBehaviour
             fpstxt.color = Color.yellow;
         }
     }
+
+    public void Transition()
+    {
+
+    }
+
+    public void TransitionEnd()
+    {
+        discoActive = true;
+        foreach (AudioSource As in AudioSources)
+        {
+            As.Play();
+        }
+    } 
 }
