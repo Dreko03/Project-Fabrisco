@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -491,7 +491,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &457038049
 Transform:
@@ -750,6 +750,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cone (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aad1b8756a17a6d4d960e574fc1d37aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aad1b8756a17a6d4d960e574fc1d37aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -852,7 +857,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1046060709
 Transform:
@@ -894,7 +899,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1096508308
 Transform:
@@ -982,6 +987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Faisceau1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 45902141754e5d945a65460e200ee688,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 45902141754e5d945a65460e200ee688,
         type: 3}
@@ -1230,7 +1240,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1147317266
 Transform:
@@ -1322,7 +1332,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1208415152
 Transform:
@@ -1501,6 +1511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aad1b8756a17a6d4d960e574fc1d37aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aad1b8756a17a6d4d960e574fc1d37aa,
         type: 3}
@@ -2060,7 +2075,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1868863185
 Transform:
@@ -2148,6 +2163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Faisceau2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aad1b8756a17a6d4d960e574fc1d37aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aad1b8756a17a6d4d960e574fc1d37aa,
         type: 3}
@@ -2374,6 +2394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aad1b8756a17a6d4d960e574fc1d37aa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: aad1b8756a17a6d4d960e574fc1d37aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2533,41 +2558,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.28466418
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.0034614212
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.015243799
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.95849985
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 33.065002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -1.047
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376535367991711962, guid: 16a557ee51574ef4c85eda229385f954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -2.1330001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a557ee51574ef4c85eda229385f954, type: 3}
