@@ -26,6 +26,10 @@ public class SC_Disc : MonoBehaviour
         interactComponent = GetComponent<Interactable>();
         linearMapping = GetComponent<LinearMapping>();
     }
+    void Start()
+    {
+        
+    }
 
     public void Update()
     {

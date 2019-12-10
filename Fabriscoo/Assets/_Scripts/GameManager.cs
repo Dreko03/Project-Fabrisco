@@ -16,12 +16,15 @@ public class GameManager : MonoBehaviour
     public float fps, timeScale;
     public Text fpstxt, timetxt;
     public PlayableDirector tml_transition;
+    public float timers;
+    public GameObject UI_Micro;
 
     // Start is called before the first frame update
     void Awake()
     {
         GPEs = FindObjectsOfType<ChangeTheWorld>();
-        Time.captureFramerate = 90;
+        //Time.captureFramerate = 90;
+        Application.targetFrameRate = 60;
 
     }
 
@@ -49,13 +52,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Timer();
         FPScount();
         timeScale = Time.timeScale;
 
         if (discoActive)
         {
             //viewedObjects = Physics.OverlapCapsule(CamPos.position, CamPos.position + new Vector3(0, 0, capsuleLength), capsuleRadius);
-            viewedObjects = Physics.OverlapCapsule(CamPos.position, CamPos.position + (CamPos.forward * capsuleLength), capsuleRadius);
+            viewedObjects = Physics.OverlapCapsule(CamPos.position, CamPos.position + (CamPos.forward * capsuleLength), capsuleRadius, 1024);
 
             foreach (Collider viewedObjectsCol in viewedObjects)
             {
@@ -100,10 +104,26 @@ public class GameManager : MonoBehaviour
 
     public void TransitionEnd()
     {
+
         discoActive = true;
         foreach (AudioSource As in AudioSources)
         {
             As.Play();
         }
-    } 
+    }
+
+    public void Timer()
+    {
+        timers += Time.deltaTime;
+
+        bool premier = false;
+
+        if(timers > 10 && !premier)
+        {
+            UI_Micro.GetComponent<Animator>().SetBool("isActive", true);
+            premier = true;
+        }
+    }
+
+
 }
