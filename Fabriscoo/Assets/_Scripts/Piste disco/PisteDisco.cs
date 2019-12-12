@@ -6,11 +6,12 @@ using UnityEngine;
 public class PisteDisco : MonoBehaviour
 {    
     public Sequence[] sequences = new Sequence[2];
-    public int currentSequence = 0;   
+    public int currentSequence = 0;
+    public float delay;
 
     void Start()
     {       
-        StartCoroutine(SwitchSequences(3f));
+        StartCoroutine(SwitchSequences(delay));
     }
 
     public void BoucleTurnOff()
