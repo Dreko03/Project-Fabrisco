@@ -6,7 +6,8 @@ using Valve.VR.InteractionSystem;
 public class SC_Disc : MonoBehaviour
 {
     public AudioSource[] AudioSources;
-    public Animator[] ans;
+    public Animator[] ans, ansss;
+    public List<Animator> anss;
     public AnimationState anims;
     public CircularDrive circularDrive;
     public Interactable interactComponent;
@@ -28,7 +29,15 @@ public class SC_Disc : MonoBehaviour
     }
     void Start()
     {
-        
+        foreach(Animator ani in ans)
+        {
+            if(ani.gameObject.tag == "reversable")
+            {
+                anss.Add(ani);
+            }
+        }
+
+        ansss = anss.ToArray();
     }
 
     public void Update()
@@ -57,7 +66,7 @@ public class SC_Disc : MonoBehaviour
             As.pitch += multiplier * globalMultiplier;
         }
 
-        foreach (Animator an in ans)
+        foreach (Animator an in ansss)
         {
             an.SetFloat("Multiplier", 1 + (multiplier * globalMultiplier));
         }
@@ -76,7 +85,7 @@ public class SC_Disc : MonoBehaviour
                 As.pitch -= multiplier * globalMultiplier;
             }
         }
-        foreach (Animator an in ans)
+        foreach (Animator an in ansss)
         {
             an.SetFloat("Multiplier", -1 - (multiplier * globalMultiplier));
         }
@@ -88,7 +97,7 @@ public class SC_Disc : MonoBehaviour
         {
             As.pitch = 1f;
         }
-        foreach (Animator an in ans)
+        foreach (Animator an in ansss)
         {
             an.SetFloat("Multiplier", 1f);
         }
