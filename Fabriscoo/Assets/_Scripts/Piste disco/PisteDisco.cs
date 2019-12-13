@@ -6,6 +6,7 @@ using UnityEngine;
 public class PisteDisco : MonoBehaviour
 {    
     public Sequence[] sequences = new Sequence[2];
+    
     public int currentSequence = 0;
     public float delay;
 
