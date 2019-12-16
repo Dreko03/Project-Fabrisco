@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c5e271bf1bda1944a1065d60758872a
+guid: 24c0ccedd3360c142b763de28bc01ff1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,23 +20,23 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 6
+  generateCubemap: 5
   cubemapConvolution: 0
-  seamlessCubemap: 1
+  seamlessCubemap: 0
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 0
+    filterMode: -1
+    aniso: 4
     mipBias: -1
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -51,7 +51,7 @@ TextureImporter:
   alphaUsage: 2
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 4
+  textureType: 0
   textureShape: 2
   singleChannelComponent: 0
   maxTextureSizeSet: 0
