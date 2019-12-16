@@ -11,10 +11,13 @@ using UnityEngine;
 public class PisteDiscoTest : MonoBehaviour
 {   
     public MeshRenderer[] meshes;
+    public MeshRenderer[] EmissiveMeshes;
+    public int CubeNumbers = 0;
+    int getArrayElements;
     //public Sequence[] sequences = new Sequence[0];
 
     void Start()
-    {       
+    {
         GetAllChildrenMeshes();
         RandomSequence();
     }
@@ -26,26 +29,27 @@ public class PisteDiscoTest : MonoBehaviour
         //meshes[0].enabled = false;      
         //int(Random.value * (meshes.Length - 1)      
     }
-
-    public MeshRenderer[] EmissiveMeshes;
+   
     //etape 2: obtenir 10 éléments aléatoire du tableau meshes
     public void RandomSequence()
     {
-
-        meshes = this.gameObject.GetComponentsInChildren<MeshRenderer>();
-        
         //parcours 1 à 1 les éléments de mon tableau meshes et sélectionne 10 éléments aléatoire (int i = 10)
-        for (int i = 10; i > 0; i--)
+        for (int i = CubeNumbers; i < 0; i--)
         {
-            Random.Range(0, meshes.Length -1);          
-            Debug.Log(Random.Range(0, meshes.Length -1));  
+            getArrayElements = Random.Range(0, meshes.Length -1);                     
+            Debug.Log(getArrayElements);
             
             
-            //étape 3: sauvegarder les 10 éléments dans un autre tableau
+
         }        
     }
+    //étape 3: sauvegarder les 10 éléments dans un autre tableau
+    public void GetIntToArray()
+    {
+        
+    }
 
-    
+    /*
     [System.Serializable]
     public class Sequence
     {
@@ -54,7 +58,7 @@ public class PisteDiscoTest : MonoBehaviour
 
     }
     
-
+    */
 }
 
 
