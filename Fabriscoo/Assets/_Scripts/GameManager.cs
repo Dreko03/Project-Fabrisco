@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     {
         GPEs = FindObjectsOfType<ChangeTheWorld>();
         //Time.captureFramerate = 90;
-        Application.targetFrameRate = 90;
+        //QualitySettings.vSyncCount = 0;
+        //Application.targetFrameRate = 20;
 
     }
 
