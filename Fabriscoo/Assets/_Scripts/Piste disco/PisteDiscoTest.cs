@@ -11,54 +11,89 @@ using UnityEngine;
 public class PisteDiscoTest : MonoBehaviour
 {   
     public MeshRenderer[] meshes;
-    public MeshRenderer[] EmissiveMeshes;
-    public int CubeNumbers = 0;
+    public List<MeshRenderer> EmissiveMeshes = new List<MeshRenderer>();
+    public Material[] materials;
+
     int getArrayElements;
-    //public Sequence[] sequences = new Sequence[0];
+    int getEmissivesMaterials;
+    public int CubeNumbers = 0;  
+    
+    public float delayRandomSequence;
 
     void Start()
     {
         GetAllChildrenMeshes();
-        RandomSequence();
+        TurnOffSequences();      
+        StartCoroutine(SwitchSequences(delayRandomSequence));
     }
     
-    //etape 1: créer un tableau répertoriant tout les meshComponent (scripts) des cubes de ma piste disco
+    //créer un tableau répertoriant tout les meshComponent (scripts) des cubes de ma piste disco
     public void GetAllChildrenMeshes()
     {
-        meshes = this.gameObject.GetComponentsInChildren<MeshRenderer>();
-        //meshes[0].enabled = false;      
-        //int(Random.value * (meshes.Length - 1)      
+        meshes = this.gameObject.GetComponentsInChildren<MeshRenderer>();          
     }
-   
-    //etape 2: obtenir 10 éléments aléatoire du tableau meshes
+
+
     public void RandomSequence()
     {
-        //parcours 1 à 1 les éléments de mon tableau meshes et sélectionne 10 éléments aléatoire (int i = 10)
-        for (int i = CubeNumbers; i < 0; i--)
+        //Réinitialise ma liste (nettoyage des éléments précédents)
+        EmissiveMeshes.Clear();
+
+        //tant que le taille du tableau EmissiveMeshes est infèrieur à mon nombre de cubes emissifs voulues
+        while (EmissiveMeshes.Count < CubeNumbers)
         {
-            getArrayElements = Random.Range(0, meshes.Length -1);                     
-            Debug.Log(getArrayElements);
-            
-            
+            getArrayElements = Random.Range(0, meshes.Length - 1); //  prend un nombre aléatoire de la liste                    
+            //Debug.Log(getArrayElements);
+            //si ma liste emissiveMeshes contient déjà ma valeur aléatoire           
+            if (!EmissiveMeshes.Contains(meshes[getArrayElements]))
+            {
+                //permet d'ajouter mes variables getArrayElements du tableau meshes dans la liste EmissiveMeshes
+                EmissiveMeshes.Add(meshes[getArrayElements]);
+            }
+        }                               
+        TurnOn();
+    }      
 
-        }        
-    }
-    //étape 3: sauvegarder les 10 éléments dans un autre tableau
-    public void GetIntToArray()
+     //permet de reset tout les materials à chaque séquence aléatoire
+    public void TurnOffSequences()
     {
-        
+        for (int i = 0; i < EmissiveMeshes.Count; i++)
+        {
+            EmissiveMeshes[i].material = materials[0];
+        }
     }
 
-    /*
-    [System.Serializable]
-    public class Sequence
+     //permet de changer de material emissif
+    public void TurnOn()
     {
-        public MeshRenderer[] EmissiveMeshes;       
-
-
+        foreach (MeshRenderer emissif in EmissiveMeshes)
+        {           
+            for (int x = 0; x < EmissiveMeshes.Count; x++)
+            {
+                getEmissivesMaterials = Random.Range(0, materials.Length - 1);
+                emissif.material = materials[getEmissivesMaterials];                
+            }
+        }
     }
-    
-    */
+
+    IEnumerator SwitchSequences(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TurnOffSequences();
+        RandomSequence();
+        yield return new WaitForSeconds(delay);
+        TurnOffSequences();
+        RandomSequence();
+        yield return new WaitForSeconds(delay);
+        TurnOffSequences();
+        RandomSequence();
+        yield return new WaitForSeconds(delay);
+        TurnOffSequences();
+        RandomSequence();
+        yield return new WaitForSeconds(delay);
+        TurnOffSequences();
+        StartCoroutine(SwitchSequences(delayRandomSequence));
+    }
 }
 
 
