@@ -3,85 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+//décortiquer se dont j'ai besoin
+//établir un plan de travail logique
+//utiliser la documentation
+//utiliser les debugger pour savoir dans quelle direction je vais
 
 public class PisteDiscoTest : MonoBehaviour
-{    
-    public Sequence[] sequences = new Sequence[2];
-    public int currentSequence = 0;
-    public float delay;
-
+{   
+    public MeshRenderer[] meshes;
+    public MeshRenderer[] EmissiveMeshes;
+    public int CubeNumbers = 0;
+    int getArrayElements;
+    //public Sequence[] sequences = new Sequence[0];
 
     void Start()
-    {       
-        StartCoroutine(SwitchSequences(delay));
+    {
+        GetAllChildrenMeshes();
+        RandomSequence();
     }
     
-    public void BoucleTurnOff()
+    //etape 1: créer un tableau répertoriant tout les meshComponent (scripts) des cubes de ma piste disco
+    public void GetAllChildrenMeshes()
     {
-        foreach (Sequence sequence in sequences)
+        meshes = this.gameObject.GetComponentsInChildren<MeshRenderer>();
+        //meshes[0].enabled = false;      
+        //int(Random.value * (meshes.Length - 1)      
+    }
+   
+    //etape 2: obtenir 10 éléments aléatoire du tableau meshes
+    public void RandomSequence()
+    {
+        //parcours 1 à 1 les éléments de mon tableau meshes et sélectionne 10 éléments aléatoire (int i = 10)
+        for (int i = CubeNumbers; i < 0; i--)
         {
-            sequence.TurnOffSequences();
-        }
+            getArrayElements = Random.Range(0, meshes.Length -1);                     
+            Debug.Log(getArrayElements);
+            
+            
+
+        }        
     }
-    
-    IEnumerator SwitchSequences(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        BoucleTurnOff();
-        currentSequence = 0;
-        sequences[currentSequence].TurnOn();
-        yield return new WaitForSeconds(delay);
-        BoucleTurnOff();
-        currentSequence = 1;
-        sequences[currentSequence].TurnOn();
-        yield return new WaitForSeconds(delay);
-        BoucleTurnOff();
-        currentSequence = 2;
-        sequences[currentSequence].TurnOn();
-        yield return new WaitForSeconds(delay);
-        BoucleTurnOff();
-        currentSequence = 3;
-        sequences[currentSequence].TurnOn();
-        yield return new WaitForSeconds(delay);
-        BoucleTurnOff();
-        StartCoroutine(SwitchSequences(delay));
-    }
-    
-    void Update()
+    //étape 3: sauvegarder les 10 éléments dans un autre tableau
+    public void GetIntToArray()
     {
         
     }
 
+    /*
     [System.Serializable]
     public class Sequence
     {
-        public MeshRenderer[] cells;             
-        public Material[] materials;                  
+        public MeshRenderer[] EmissiveMeshes;       
 
-        
-        public void TurnOffSequences()
-        {
-            for (int i = 0; i < cells.Length; i++)
-            {               
-                cells[i].material = materials[0];
-            }
-        }
-        
-        public void TurnOn()
-        {
-            foreach (MeshRenderer meshes in cells)
-            {
-                for (int i = 0; i < cells.Length; i++)
-                {
-                    cells[i].gameObject.GetComponentInChildren<MeshRenderer>();
-                    for (int x = 0; x < materials.Length; x++)
-                    {
-                        meshes.material = materials[x];
-                    }
-                }                           
-            }
-        }         
+
     }
+    
+    */
 }
 
 
