@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6689240204422894990}
   - component: {fileID: 6689240204422894989}
   m_Layer: 0
-  m_Name: Boule_disco
+  m_Name: Boule_disco_final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 30
-  m_Range: 15
+  m_Range: 15.3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
