@@ -1382,7 +1382,7 @@ MonoBehaviour:
     value: 0.5
   clamp:
     overrideState: 0
-    value: 10
+    value: 13.51
   diffusion:
     overrideState: 0
     value: 7
@@ -1391,14 +1391,14 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   fastMode:
     overrideState: 0
-    value: 0
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 0
+    value: 1.12
