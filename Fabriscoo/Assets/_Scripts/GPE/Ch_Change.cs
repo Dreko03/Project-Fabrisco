@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ch_DJSet : MonoBehaviour
+public class Ch_Change : MonoBehaviour
 {
     Animator an;
 
     private void Awake()
     {
-        an = GetComponentInChildren<Animator>();
+        an = GetComponent<Animator>();
     }
 
     public void Change()

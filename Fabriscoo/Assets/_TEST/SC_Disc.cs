@@ -22,14 +22,17 @@ public class SC_Disc : MonoBehaviour
     {
         AudioSources = FindObjectOfType<GameManager>().AudioSources;
         ans = FindObjectsOfType<Animator>();
-        outAngle = circularDrive.outAngle;
         circularDrive = GetComponent<CircularDrive>();
         interactComponent = GetComponent<Interactable>();
-        linearMapping = GetComponent<LinearMapping>();
+        outAngle = circularDrive.outAngle;
     }
+
     void Start()
     {
-        foreach(Animator ani in ans)
+
+        linearMapping = GetComponent<LinearMapping>();
+
+        foreach (Animator ani in ans)
         {
             if(ani.gameObject.tag == "reversable")
             {
@@ -42,6 +45,8 @@ public class SC_Disc : MonoBehaviour
 
     public void Update()
     {
+
+
         transform.Rotate(0, rotationValue * Time.deltaTime, 0, Space.World);
         if (linearMapping.value > linearMapValue)
         {

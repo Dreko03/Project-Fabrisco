@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ch_DJSet : MonoBehaviour
+public class Ch_DiscoBall : MonoBehaviour
 {
     Animator an;
 
@@ -18,6 +18,6 @@ public class Ch_DJSet : MonoBehaviour
 
     public void Unchange()
     {
-        an.SetBool("Change", false);
+        an.SetBool("change", false);
     }
 }

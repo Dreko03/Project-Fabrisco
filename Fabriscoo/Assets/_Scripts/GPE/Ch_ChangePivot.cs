@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ch_DJSet : MonoBehaviour
+public class Ch_ChangePivot : MonoBehaviour
 {
     Animator an;
 
