@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public PlayableDirector tml_transition;
     public float timers;
     public GameObject UI_Micro;
+    public Animator UI_BlackScreen;
+    public Material[] MAT_Museum;
+    public GameObject m_Museum;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
         //Time.captureFramerate = 90;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 20;
-
+        //MAT_Museum = m_Museum.GetComponent<MeshRenderer>()
     }
 
     public void Activate()
@@ -100,12 +103,12 @@ public class GameManager : MonoBehaviour
 
     public void Transition()
     {
-
+        UI_BlackScreen.SetBool("BlackScreenON", true);
     }
 
     public void TransitionEnd()
     {
-
+        UI_BlackScreen.SetBool("BlackScreenON", false);
         discoActive = true;
         foreach (AudioSource As in AudioSources)
         {
