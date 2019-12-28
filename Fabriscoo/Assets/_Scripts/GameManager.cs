@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
-        tml_transition.Play();
+        if (!discoActive)
+        {
+            tml_transition.Play();
+        }
     }
 
     public void Desactivate()
