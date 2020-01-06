@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Animator UI_BlackScreen;
     public Material[] MAT_Museum;
     public GameObject m_Museum;
+    public Animator[] an;
+    public float animSpeed;
 
     // Start is called before the first frame update
     void Awake()
@@ -59,6 +61,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (Animator ans in an)
+        {
+            ans.SetFloat("Multi", animSpeed);
+        }
         Timer();
         FPScount();
         timeScale = Time.timeScale;
