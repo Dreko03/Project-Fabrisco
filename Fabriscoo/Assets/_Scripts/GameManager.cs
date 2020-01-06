@@ -31,12 +31,15 @@ public class GameManager : MonoBehaviour
         //Time.captureFramerate = 90;
         //QualitySettings.vSyncCount = 0;
         //Application.targetFrameRate = 20;
-
+        //MAT_Museum = m_Museum.GetComponent<MeshRenderer>()
     }
 
     public void Activate()
     {
-        tml_transition.Play();
+        if (!discoActive)
+        {
+            tml_transition.Play();
+        }
     }
 
     public void Desactivate()
@@ -109,12 +112,12 @@ public class GameManager : MonoBehaviour
 
     public void Transition()
     {
-
+        UI_BlackScreen.SetBool("BlackScreenON", true);
     }
 
     public void TransitionEnd()
     {
-
+        UI_BlackScreen.SetBool("BlackScreenON", false);
         discoActive = true;
         foreach (AudioSource As in AudioSources)
         {
