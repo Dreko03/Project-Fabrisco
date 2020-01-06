@@ -90,7 +90,7 @@ public class PisteDiscoTest : MonoBehaviour
         yield return new WaitForSeconds(delay);
         TurnOffSequences();
         RandomSequence();
-        //yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay);
         //TurnOffSequences();
         StartCoroutine(SwitchSequences(delayRandomSequence));
     }
